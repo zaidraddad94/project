@@ -1,51 +1,21 @@
-// var d = new Date()
-// var h = d.getHours() + ":" + d.getMinutes();
-
+// declired variables
 var name
 var det
 var main = [];
+var day = new Date().toString().split(" ")[0]
 
-function each(coll, func) {
-	if (Array.isArray(coll)) {
-		for (var i = 0; i < coll.length; i++) {
-			func(coll[i], i);
-		}
-	} else {
-		for (var key in coll) {
-			func(coll[key], key);
-		}
+//function delete the checked item 
+$("#del").on('click', function () {
+	for (var i = 0; i < main.length; i++) {
+		$('input[type="checkbox"]:checked').closest("div").remove();
+		main.splice(i, 1);
 	}
-}
+})
 
-
-function filter(array, predicate) {
-	var acc = [];
-	if (!Array.isArray(array)) {
-		acc = {};
-	}
-	each(array, function (elem, i) {
-		if (predicate(elem, i)) {
-			if (!Array.isArray(array)) {
-				acc[i] = elem;
-			} else {
-				acc.push(elem);
-			}
-		}
-	})
-	return acc;
-}
-
-
-
-////////////////////////////////////////////////////////////////////
-
-
-
+//factory function to make note object and push it to main
 $("#btn").on('click', function (e) {
 	var n = $("#n").val()
 	var d = $("#ddd").val()
-
-
 	main.push({
 		name: n,
 		det: d,
@@ -53,37 +23,19 @@ $("#btn").on('click', function (e) {
 		date: new Date().getHours() + ":" + new Date().getMinutes()
 	})
 
-	
-x()
-
+	x();
 
 })
 
-
-function x (){
+//function add the note after write it 
+function x() {
 	$("#list").html('');
 	for (var i = 0; i < main.length; i++) {
-
-
-		var $main = $('<div class="di" id="'+i+ '"></div>')
-
-		$main.html(main[i]['name'] + '  ' + `<button class = "${i}"></button>`)
-		
-
-
+		var $main = $('<div class="di" id="' + i + '"></div>')
+		$main.html("Note Tittle : " + main[i]['name'] + '<br>' + "Detailes : " + main[i]['det'] + '  ' + '<br>' + main[i].date + " " + day + ` <input type="checkbox" class=${i} style="margin-left:500px;" >` + " check to delete")
 		$main.prependTo($("#list"))
-	
-
-		
+		$('input').val("");
 	}
 
 
 }
-// $("button.123").click(function () {
-// 	$("button.123").parent().css("background-color", "red")
-// })
-//$( "p" ).parent( ".selected" )
-/*$(document).click(function(){
-	$('.di').hide();
-})
-*/
