@@ -1,0 +1,111 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<title> To do </title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  	
+</head>
+<style type="text/css">
+	.di {
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 30px;
+    margin:20px;
+    padding: 20px;
+}
+	
+
+	}
+	
+</style>
+<body>
+<div id="zaa"></div>
+
+	
+	<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <!-- <img src="#" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+ToDoList:   </a>
+</nav>
+
+  <div style="margin:25px;" class="form-row align-items-center">
+    <div class="col-sm-3 my-1">
+      
+      <input type="text" class="form-control" id="n" placeholder="Name">
+    </div>
+    <div class="col-sm-3 my-1">
+      
+      <input style="width:300px "  type="text" class="form-control" id="ddd" placeholder="Detailes"> 
+    </div>
+    
+   
+    <div style="margin-left: 100px" class="col-auto my-1">
+      <button id="btn" style="width:120px" class="btn btn-primary">Add</button>
+      <button style="width:120px "  class="btn btn-danger">Cancel</button>
+    </div>
+  </div>
+
+
+<!-- <script>
+
+$(document).ready(function(){
+var name
+var det
+var main=[{name:'dsfsd',det:'dfgdfg'} ];
+
+
+$( "#btn" ).click( function(e){
+	  	n = $("#n").val()
+	  	d = $("#ddd").val()
+	  	
+	  	  
+	  	  main.push({
+	 	name : n,
+	 	det : d,
+	 	done : false,
+	 	date : new Date().getHours() + ":" + new Date().getMinutes()
+	 })
+	  	  console.log(main)
+		 
+;
+}
+
+)
+
+for(var i=0 ; i<main.length ; i++){
+var name = main[i]["name"];
+var det = main[i]["det"];
+var date=main[i]["date"];
+var $main = $('<div class="di"></div>')
+ $main.text( name+" , "+det+ " , "+date)
+	$main.appendTo ($('body'))
+}
+
+
+// var x = function  (name,det){
+// 	 return main.unshift({
+// 	 	name : name,
+// 	 	det : det,
+// 	 	done : false,
+// 	 	date : new Date().getHours() + ":" + new Date().getMinutes()
+// 	 })
+
+// 	}
+
+
+	  
+
+
+</script> -->
+<div id="list">
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
